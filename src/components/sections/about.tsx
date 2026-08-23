@@ -163,7 +163,7 @@ export function About() {
         <div
           ref={socialsRef}
           data-social-rows
-          className="mt-[clamp(1.5rem,4vh,2.5rem)] flex flex-wrap items-center justify-center"
+          className="mt-[clamp(1.5rem,4vh,2.5rem)] grid grid-cols-2 items-center justify-items-center sm:flex sm:flex-wrap sm:justify-center"
         >
           {socials.map((link, index) => (
             <SocialItem
@@ -264,7 +264,7 @@ function SocialItem({ link, index }: { link: SocialLink; index: number }) {
   );
 
   const wrapper =
-    "relative inline-flex min-h-11 items-center border-l border-black/10 first:border-l-0";
+    "relative inline-flex min-h-11 w-full items-center justify-center border-l border-black/10 odd:border-l-0 sm:w-auto sm:justify-start sm:first:border-l-0";
 
   return link.href ? (
     <a

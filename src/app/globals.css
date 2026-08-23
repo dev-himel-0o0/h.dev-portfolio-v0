@@ -195,7 +195,7 @@
 }
 
 .section-heading {
-  font-size: clamp(1.75rem, 8vw, 5.5rem);
+  font-size: clamp(2.25rem, 8vw, 5.5rem);
   line-height: 0.9;
 }
 
@@ -229,7 +229,7 @@
 /* The stage starts at the contact seam and crops away the font's empty line-box
    space. The glyph can slide from the seam without sitting beneath the panel. */
 [data-site-footer] {
-  --footer-brand-size: clamp(6.5rem, 27vw, 27rem);
+  --footer-brand-size: clamp(8rem, 27vw, 27rem);
   --footer-top-space: clamp(1.5rem, 3.5vw, 3rem);
   --footer-stage-size: calc(
     var(--footer-brand-size) * 0.75 + var(--footer-top-space)
@@ -427,12 +427,21 @@
   }
 
   .hero-lockup-meta {
-    font-size: clamp(0.8125rem, 3.4vw, 0.9375rem);
+    font-size: clamp(0.6875rem, 3vw, 0.8125rem);
     letter-spacing: 0.12em;
   }
 
+  .hero-name-frame {
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  .hero-title-stage {
+    width: 100%;
+  }
+
   .hero-title {
-    font-size: clamp(2rem, min(11.5vw, 100cqw / 8.6), 6.75rem);
+    font-size: clamp(2.75rem, min(11.5vw, 100cqw / 8.6), 6.75rem);
     letter-spacing: -0.09em;
   }
 
@@ -465,21 +474,11 @@
   }
 }
 
-/* Narrow phones: one line cannot fit both meta items at the larger size, so
-   they stack vertically instead of clipping. */
+/* Narrow phones: shrink meta text so both items fit on one line. */
 @media (max-width: 479px) {
   .hero-lockup-meta {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.375rem;
-  }
-
-  .hero-lockup-meta span {
-    width: 100%;
-  }
-
-  .hero-lockup-meta span:last-child {
-    text-align: right;
+    font-size: clamp(0.625rem, 2.8vw, 0.75rem);
+    letter-spacing: 0.1em;
   }
 }
 
