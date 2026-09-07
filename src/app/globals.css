@@ -194,6 +194,40 @@
   paint-order: stroke fill;
 }
 
+/* ---- Shuffle (reactbits text-animation, B/W-trimmed) ----
+   Type (family, size, case, leading) inherits from context — the hero
+   supplies General Sans, clamp sizes, and nowrap — only the per-letter
+   strip mechanics live here. */
+.shuffle-parent {
+  display: inline-block;
+  white-space: normal;
+  word-wrap: break-word;
+  will-change: transform;
+  visibility: hidden;
+}
+
+.shuffle-parent.is-ready {
+  visibility: visible;
+}
+
+.shuffle-char-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: baseline;
+  position: relative;
+}
+
+.shuffle-char-wrapper > span {
+  display: inline-flex;
+  will-change: transform;
+}
+
+.shuffle-char {
+  line-height: 1;
+  display: inline-block;
+  text-align: center;
+}
+
 .section-heading {
   font-size: clamp(2.25rem, 8vw, 5.5rem);
   line-height: 0.9;
@@ -317,8 +351,12 @@
   justify-content: center;
   gap: 0.06em;
   margin: 0;
+  min-width: 0;
+  max-width: 100%;
   overflow: visible;
-  font-size: clamp(2rem, min(8.6vw, 100cqw / 8.6), 10rem);
+  /* Single-line lockup holds ~13 glyphs + word gap + side padding, so the
+     container-query divisor budgets ~9.2em of advance, not one word. */
+  font-size: clamp(2rem, min(8.4vw, 100cqw / 9.2), 10rem);
   line-height: 0.86;
   letter-spacing: -0.055em;
   text-align: center;
@@ -346,11 +384,6 @@
 .hero-title .hero-outline-text {
   -webkit-text-stroke-width: clamp(1px, 0.12vw, 2px);
   text-stroke-width: clamp(1px, 0.12vw, 2px);
-}
-
-.hero-outline-final-letter {
-  display: inline-block;
-  margin-inline-start: 0.032em;
 }
 
 .hero-meta-stage {
@@ -441,8 +474,21 @@
   }
 
   .hero-title {
-    font-size: clamp(2.75rem, min(11.5vw, 100cqw / 8.6), 6.75rem);
+    /* Stacked lockup: each line is sized to the longest word (SHAHADAT,
+       8 glyphs ≈ 5.3em incl. padding), so every phone width fits. The rem
+       floor stays low enough that it never forces overflow on 320px screens. */
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 100%;
+    font-size: clamp(2rem, min(17.5vw, 100cqw / 5.6), 6.75rem);
     letter-spacing: -0.09em;
+    white-space: normal;
+  }
+
+  .hero-title-word {
+    max-width: 100%;
+    white-space: nowrap;
   }
 
   .hero-actions {
@@ -495,7 +541,7 @@
   }
 
   .hero-title {
-    font-size: clamp(1.8rem, min(8.1vw, 100cqw / 8.6), 7.5rem);
+    font-size: clamp(1.8rem, min(7.9vw, 100cqw / 9.2), 7.5rem);
   }
 
   .hero-meta-stage {

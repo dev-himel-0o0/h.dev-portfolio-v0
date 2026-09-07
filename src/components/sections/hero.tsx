@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/sections/navbar";
 import { FlipLink } from "@/components/ui/flip-link";
+import { Shuffle, type ShuffleProps } from "@/components/ui/shuffle";
 import { hero, profile } from "@/lib/data";
 import { useGSAP } from "@gsap/react";
 import { ArrowUpRight } from "@phosphor-icons/react";
@@ -22,6 +23,25 @@ const actionIcons = {
  * just as the last bands leave, so every beat below plays on an open screen.
  */
 const ENTRANCE_DELAY_S = 1.65;
+
+/**
+ * Shared Shuffle config for the two name lines. Mounted only once the
+ * preloader/wipe reveals the hero, so ScrollTrigger's enter-play fires on an
+ * open screen instead of under the curtain; hover replays after that.
+ */
+const NAME_SHUFFLE_PROPS = {
+  tag: "span",
+  shuffleDirection: "right",
+  duration: 0.35,
+  animationMode: "evenodd",
+  shuffleTimes: 1,
+  ease: "power3.out",
+  stagger: 0.03,
+  threshold: 0.1,
+  triggerOnce: true,
+  triggerOnHover: true,
+  respectReducedMotion: true,
+} as const satisfies Partial<ShuffleProps>;
 
 export function Hero({
   isRevealed,
@@ -272,7 +292,14 @@ export function Hero({
                         data-hero-line="filled"
                         className="block whitespace-nowrap"
                       >
-                        {hero.filledTitle}
+                        {isRevealed ? (
+                          <Shuffle
+                            text={hero.filledTitle}
+                            {...NAME_SHUFFLE_PROPS}
+                          />
+                        ) : (
+                          hero.filledTitle
+                        )}
                       </span>
                     </span>
                   </span>
@@ -282,10 +309,14 @@ export function Hero({
                         data-hero-line="outlined"
                         className="hero-outline-text block whitespace-nowrap"
                       >
-                        {hero.outlinedTitle.slice(0, -1)}
-                        <span className="hero-outline-final-letter">
-                          {hero.outlinedTitle.slice(-1)}
-                        </span>
+                        {isRevealed ? (
+                          <Shuffle
+                            text={hero.outlinedTitle}
+                            {...NAME_SHUFFLE_PROPS}
+                          />
+                        ) : (
+                          hero.outlinedTitle
+                        )}
                       </span>
                     </span>
                   </span>
