@@ -109,7 +109,7 @@ export interface HeroAction extends NavigationItem {
 export const profile = {
   name: "Himel",
   brand: "H.dev",
-  role: "Design Engineer",
+  role: "Full-Stack Software Engineer",
   tagline:
     "Have a business idea in mind? Let’s turn it into a digital product.",
   availability: "Available for freelance & remote",
@@ -185,7 +185,7 @@ export const projects: Project[] = [
   {
     title: "Project One",
     year: "2025",
-    role: "Design Engineer",
+    role: "Full-Stack Software Engineer",
     description:
       "Placeholder description. What the product was, the problem it solved, and the impact you delivered.",
     impact: [
@@ -198,7 +198,7 @@ export const projects: Project[] = [
   {
     title: "Project Two",
     year: "2024",
-    role: "Design Engineer",
+    role: "Full-Stack Software Engineer",
     description:
       "Placeholder description. What the product was, the problem it solved, and the impact you delivered.",
     impact: [
@@ -211,7 +211,7 @@ export const projects: Project[] = [
   {
     title: "Project Three",
     year: "2023",
-    role: "Design Engineer",
+    role: "Full-Stack Software Engineer",
     description:
       "Placeholder description. What the product was, the problem it solved, and the impact you delivered.",
     impact: [
