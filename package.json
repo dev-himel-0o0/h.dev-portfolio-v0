@@ -1,6 +1,7 @@
 {
-  "name": "my-dev-portfolio-v0",
+  "name": "h.dev-portfolio-v0",
   "version": "0.1.0",
+  "description": "Himel's design engineer portfolio — a monochrome, motion-driven site built with Next.js 16, React 19, Tailwind v4, GSAP, and Lenis.",
   "private": true,
   "scripts": {
     "dev": "next dev",
