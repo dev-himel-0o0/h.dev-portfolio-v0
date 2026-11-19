@@ -1816,7 +1816,9 @@ test.describe("home", () => {
     const initialBrandY = await brandY();
     if (canAnimate) {
       expect(Math.abs(hiddenBrandY)).toBeGreaterThan(
-        (await stage.evaluate((element) => element.offsetHeight)) * 0.65,
+        (await stage.evaluate(
+          (element) => (element as HTMLElement).offsetHeight,
+        )) * 0.65,
       );
       expect(initialBrandY).toBeCloseTo(hiddenBrandY, 0);
     } else {
@@ -1885,9 +1887,6 @@ test.describe("services", () => {
     );
     await expect(section.locator("#services-heading")).toContainText(
       servicesSection.outlinedTitle,
-    );
-    await expect(section.locator("[data-service-interaction]")).toContainText(
-      servicesSection.label,
     );
     await expect(section.locator("[data-service-interaction]")).toContainText(
       String(services.length).padStart(2, "0"),

@@ -5,9 +5,9 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-# Project: Himel — Design Engineer Portfolio
+# Project: Himel — Full-Stack Software Engineer Portfolio
 
-Premium, awwwards-style portfolio for **Himel** (design engineer, 4+ years) to win freelance clients and remote roles.
+Premium, awwwards-style portfolio for **Himel** (Full-Stack Software Engineer, 4+ years) to win freelance clients and remote roles.
 
 ## Design language
 

@@ -1,14 +1,15 @@
-import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
-import { Montserrat } from "next/font/google";
-import "./globals.css";
-import { cn } from "@/lib/utils";
-import { SmoothScroll } from "@/components/ui/smooth-scroll";
-import { ScrollToTop } from "@/components/ui/scroll-to-top";
-import { PageTransition } from "@/components/ui/page-transition";
-import { WipeCurtain } from "@/components/ui/wipe-curtain";
 import { DesktopEnhancements } from "@/components/ui/desktop-enhancements";
 import { MotionProvider } from "@/components/ui/motion-provider";
+import { PageTransition } from "@/components/ui/page-transition";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { SmoothScroll } from "@/components/ui/smooth-scroll";
+import { WipeCurtain } from "@/components/ui/wipe-curtain";
+import { cn } from "@/lib/utils";
+import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
+import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
+import "./globals.css";
 
 const generalSans = localFont({
   src: [
@@ -24,9 +25,9 @@ const generalSans = localFont({
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Himel — Design Engineer",
+  title: "Himel — Full-Stack Software Engineer",
   description:
-    "Himel is a design engineer with 4+ years of experience, open for freelance projects and remote roles.",
+    "Himel is a Full-Stack Software Engineer with 4+ years of experience, open for freelance projects and remote roles.",
   icons: {
     icon: "/img/h.png",
   },
@@ -41,7 +42,7 @@ export const viewport: Viewport = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html

@@ -1,6 +1,6 @@
-# H.dev — Design Engineer Portfolio
+# H.dev — Full-Stack Software Engineer Portfolio
 
-The personal portfolio of **Shahadat Himel**, a design engineer with 4+ years of experience based in Dhaka, Bangladesh. The site is built to win freelance projects and remote roles by demonstrating motion craftsmanship in the first seconds — the interface itself is the proof.
+The personal portfolio of **Shahadat Himel**, a Full-Stack Software Engineer with 4+ years of experience based in Dhaka, Bangladesh. The site is built to win freelance projects and remote roles by demonstrating motion craftsmanship in the first seconds — the interface itself is the proof.
 
 **Live:** [h-dev-portfolio-v0.vercel.app](https://h-dev-portfolio-v0.vercel.app)
 
@@ -19,14 +19,14 @@ The page is composed of a preloader, hero, about, selected projects, services, s
 
 ## Tech stack
 
-| Area      | Tools                                                              |
-| --------- | ------------------------------------------------------------------ |
-| Framework | Next.js 16 (App Router), React 19, TypeScript                       |
-| Styling   | Tailwind CSS v4, shadcn/ui, Base UI, tw-animate-css                 |
-| Motion    | GSAP + `@gsap/react`, ScrollTrigger, Lenis, Motion                  |
-| Icons     | Phosphor Icons                                                      |
-| Testing   | Playwright (E2E)                                                    |
-| Deploy    | Vercel                                                              |
+| Area      | Tools                                               |
+| --------- | --------------------------------------------------- |
+| Framework | Next.js 16 (App Router), React 19, TypeScript       |
+| Styling   | Tailwind CSS v4, shadcn/ui, Base UI, tw-animate-css |
+| Motion    | GSAP + `@gsap/react`, ScrollTrigger, Lenis, Motion  |
+| Icons     | Phosphor Icons                                      |
+| Testing   | Playwright (E2E)                                    |
+| Deploy    | Vercel                                              |
 
 ## Getting started
 
@@ -41,16 +41,16 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Scripts
 
-| Command              | Description                          |
-| -------------------- | ------------------------------------ |
-| `npm run dev`        | Start the development server         |
-| `npm run build`      | Create a production build            |
-| `npm run start`      | Serve the production build           |
-| `npm run lint`       | Lint `src` and `e2e`                 |
-| `npm run format`     | Format the project with Prettier     |
-| `npm run format:check` | Check formatting without writing   |
-| `npm run test:e2e`   | Run Playwright end-to-end tests      |
-| `npm run test:e2e:ui`| Run Playwright in UI mode            |
+| Command                | Description                      |
+| ---------------------- | -------------------------------- |
+| `npm run dev`          | Start the development server     |
+| `npm run build`        | Create a production build        |
+| `npm run start`        | Serve the production build       |
+| `npm run lint`         | Lint `src` and `e2e`             |
+| `npm run format`       | Format the project with Prettier |
+| `npm run format:check` | Check formatting without writing |
+| `npm run test:e2e`     | Run Playwright end-to-end tests  |
+| `npm run test:e2e:ui`  | Run Playwright in UI mode        |
 
 ## Project structure
 

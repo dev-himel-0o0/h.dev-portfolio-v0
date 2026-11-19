@@ -224,7 +224,7 @@ export const projects: Project[] = [
   {
     title: "Project Four",
     year: "2022",
-    role: "Frontend Developer",
+    role: "Full-Stack Software Engineer",
     description:
       "Placeholder description. What the product was, the problem it solved, and the impact you delivered.",
     impact: [
